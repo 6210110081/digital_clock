@@ -31,7 +31,8 @@ class Chain {
   }
 
   void ShowString() {
-    print('time is ---- $hour : $minute ----');
+    print(
+        'time is ---- ${hour.toString().padLeft(2, '0')} : ${minute.toString().padLeft(2, '0')} ----');
     ShowSet();
   }
 
