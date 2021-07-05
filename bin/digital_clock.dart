@@ -2,9 +2,9 @@ class Chain {
   String title;
   int hour;
   int minute;
-  int state;
+  int state = 0;
 
-  Chain(this.title, this.hour, this.minute, this.state) {
+  Chain(this.title, this.hour, this.minute) {
     if (hour == 0 && minute == 0) {
       state = 1;
     } else {
@@ -32,29 +32,38 @@ class Chain {
 
   void ShowString() {
     print('time is ---- $hour : $minute ----');
+    ShowSet();
+  }
+
+  void ShowSet() {
+    if (state == 0) {
+      print('   showcurrent');
+    } else if (state == 1) {
+      print('   hour');
+    } else if (state == 2) {
+      print('   minute');
+    }
   }
 }
 
 void main(List<String> arguments) {
-  var chain = Chain('on', 18, 0, 0);
-  chain.ShowString(); //18.00
-  chain.Set(); //18.00
-  chain.Int(); //19.00
+  var chain = Chain('on', 18, 0);
   chain.ShowString();
-  chain.Set(); //19.00
-  chain.Int(); //19.01
-  chain.Set();
+
   chain.Set();
   chain.Int();
   chain.ShowString();
+
+  chain.Set();
   chain.Int();
   chain.ShowString();
+
+  chain.Set();
   chain.Int();
   chain.ShowString();
+
   chain.Int();
   chain.ShowString();
-  chain.Int();
-  chain.ShowString();
-  chain.Int();
-  chain.ShowString();
+
+  chain.Set();
 }
