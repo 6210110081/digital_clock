@@ -20,25 +20,41 @@ class Chain {
     } else if (state == 2) {
       state = 0;
     }
-
-    print(state);
   }
 
   void Int() {
     if (state == 1) {
-      print('Hour');
+      hour = (hour + 1) % 24;
     } else if (state == 2) {
-      print('Minute');
+      minute = (minute + 1) % 60;
     }
+  }
+
+  void ShowString() {
+    print('time is ---- $hour : $minute ----');
   }
 }
 
 void main(List<String> arguments) {
   var chain = Chain('on', 18, 0, 0);
+  chain.ShowString(); //18.00
+  chain.Set(); //18.00
+  chain.Int(); //19.00
+  chain.ShowString();
+  chain.Set(); //19.00
+  chain.Int(); //19.01
+  chain.Set();
   chain.Set();
   chain.Int();
-  chain.Set();
+  chain.ShowString();
   chain.Int();
-  chain.Set();
+  chain.ShowString();
   chain.Int();
+  chain.ShowString();
+  chain.Int();
+  chain.ShowString();
+  chain.Int();
+  chain.ShowString();
+  chain.Int();
+  chain.ShowString();
 }
