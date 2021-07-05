@@ -1,9 +1,23 @@
 class Inc {}
 
-class Chan {
+class Chain {
+  String title;
+  int hour;
+  int minute;
   int state;
 
-  Chan({this.state = 0});
+  Chain(
+    this.title,
+    this.hour,
+    this.minute,
+    this.state,
+  ) {
+    if (hour == 0 && minute == 0) {
+      state = 1;
+    } else {
+      state = 0;
+    }
+  }
 
   void Set() {
     if (state == 0) {
