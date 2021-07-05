@@ -27,9 +27,14 @@ class Chain {
     } else if (state == 2) {
       state = 0;
     }
+
+    print(state);
   }
 }
 
 void main(List<String> arguments) {
-  print('Hello world!');
+  final chain = Chain('on', 18, 0, 0);
+  chain.Set();
+  chain.Set();
+  chain.Set();
 }
