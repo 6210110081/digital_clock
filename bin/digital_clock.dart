@@ -1,5 +1,3 @@
-class Inc {}
-
 class Chain {
   String title;
   int hour;
@@ -25,11 +23,22 @@ class Chain {
 
     print(state);
   }
+
+  void Int() {
+    if (state == 1) {
+      print('Hour');
+    } else if (state == 2) {
+      print('Minute');
+    }
+  }
 }
 
 void main(List<String> arguments) {
   var chain = Chain('on', 18, 0, 0);
   chain.Set();
+  chain.Int();
   chain.Set();
+  chain.Int();
   chain.Set();
+  chain.Int();
 }
