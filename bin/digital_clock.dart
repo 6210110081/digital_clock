@@ -6,12 +6,7 @@ class Chain {
   int minute;
   int state;
 
-  Chain(
-    this.title,
-    this.hour,
-    this.minute,
-    this.state,
-  ) {
+  Chain(this.title, this.hour, this.minute, this.state) {
     if (hour == 0 && minute == 0) {
       state = 1;
     } else {
@@ -33,7 +28,7 @@ class Chain {
 }
 
 void main(List<String> arguments) {
-  final chain = Chain('on', 18, 0, 0);
+  var chain = Chain('on', 18, 0, 0);
   chain.Set();
   chain.Set();
   chain.Set();
